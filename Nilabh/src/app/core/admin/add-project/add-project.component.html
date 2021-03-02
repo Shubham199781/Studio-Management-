@@ -1,0 +1,89 @@
+<form class="example-form">
+    <div class="panel-number-one">
+        <!-- adding first input pair including client name and project type -->
+        <div class="input-pair-one">
+            <div class="row mb-3 ">
+                <label for="clientname" class="col-sm-2 col-form-label label-pair-one">Client</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control TextInput" id="clientname">
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label for="projectType" class="col-sm-2 col-form-label label-pair-one">Project</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control TextInput" id="projectType">
+                </div>
+            </div>
+        </div>
+        <!-- Adding second pair including start date and end date -->
+        <div class="input-pair-one">
+            <div class="row mb-3">
+                <label for="start-date" class="col-sm-2 col-form-label label-pair-one">Start</label>
+                <div class="col-sm-10">
+                    <input type="date" class="form-control TextInput" id="start-date">
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label for="end-date" class="col-sm-2 col-form-label label-pair-one">End</label>
+                <div class="col-sm-10">
+                    <input type="date" class="form-control TextInput" id="end-date">
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+    <button type="button" class="btn btn-primary btn-sm" (click)="addItem()">Add Task</button>
+    <!--- code for Task list-->
+    <div *ngFor="let item of items;let i=index">
+        <div class="card" style="margin-top:10px;">
+            <div class="card-body">
+
+                <div class="Task-Insights">
+                    <div class="Task-contents-Task">
+                        <div class="input-group mb-3">
+                            <span class="label-pair">Task</span>
+                            <input type="text" class="form-control TextInput-Task">
+                        </div>
+                    </div>
+                    <div class="Task-contents-date">
+                        <div class="input-group mb-3">
+                            <span class="label-pair">Start</span>
+                            <input type="date" class="form-control TextInput-Task">
+                        </div>
+                    </div>
+                    <div class="Task-contents-date">
+                        <div class="input-group mb-3">
+                            <span class="label-pair">End</span>
+                            <input type="date" class="form-control TextInput-Task">
+                        </div>
+                    </div>
+                    <div class="Task-contents-remarks">
+                        <div class="input-group mb-3">
+                            <span class="label-pair">Remarks</span>
+                            <textarea class="form-control TextInput-Task"></textarea>
+                        </div>
+                    </div>
+                    <div class="Task-contents-delete">
+                        <mat-icon style="padding-left: 25px;cursor:pointer;" (click)="removeTask(i,$event)">delete_forever</mat-icon>
+                    </div>
+                    <div class="Task-contents-save">
+                            <button style="margin-left:10px;"type="button" class="btn btn-warning">Save</button>
+                    </div>
+
+                </div>
+                <div class="Task-Insights">
+                    <div class="Task-contents-amount">
+                        <div class="input-group mb-3">
+                            <span class="label-pair">Amount</span>
+                            <input type="text" class="form-control TextInput-Task-amount">
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+
+    </div>
+</form>
